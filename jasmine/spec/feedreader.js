@@ -59,9 +59,15 @@ $(function() {
     * hiding/showing of the menu element.
     */
     describe('The menu', function() {
+        let body; 
+
+        beforeEach(function() {
+            body = document.querySelector("body");
+
+        });
 
         it('the menu element is hidden by default', function() {
-            expect(document.querySelector('body').classList.contains('menu-hidden')).toBe(true);
+            expect(body.classList.contains('menu-hidden')).toBe(true);
         });
 
         /* Test that ensures the menu changes
@@ -71,7 +77,6 @@ $(function() {
         */
         it('the menu changes visibility when the menu icon is clicked', function() {
             let menuIcon = document.querySelector(".menu-icon-link");
-            let body = document.querySelector("body");
             menuIcon.click();
             expect(body.classList.contains('menu-hidden')).toBe(false);
             menuIcon.click();
@@ -84,9 +89,7 @@ $(function() {
     describe('Initial Entries', function() {
         
         beforeEach(function(done) {
-            loadFeed(0, function() {
-                done();
-            });
+            loadFeed(0, done);
         });
 
         /* Test that ensures when the loadFeed
@@ -107,9 +110,9 @@ $(function() {
         var feed1, feed2;
         beforeEach(function(done) {
             loadFeed(0, function() {
-                length1 = document.querySelector('.feed').innerText;
+                feed1 = document.querySelector('.feed').innerText;
                 loadFeed(1, function() {
-                    length2 = document.querySelector('.feed').innerText;
+                    feed2 = document.querySelector('.feed').innerText;
                     done();
 
                 });

@@ -17,6 +17,6 @@ You can see it [here](https://review.udacity.com/#!/projects/3442558598/rubric)
 ## Getting started
 You have two options:
 
-The first one is running this application locally, you can clone this repo.
+The first one is running this application locally, you can clone this repo. Then, you have to execute index.html to see this website. Above all, you can see Jasmine Test.
 
 On the other hand, you can view online version [here](https://joelcantero.github.io/frontend-nanodegree-feedreader/)
